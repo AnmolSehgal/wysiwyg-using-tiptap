@@ -1,0 +1,43 @@
+.tiptap {
+  background-color: rgba(59, 59, 59, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.tiptap p.emptyEditorClass:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
+.tiptap p {
+  font-size: 1rem;
+  line-height: 24px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .tiptap p {
+    color: white;
+  }
+
+  .tiptap h1 {
+    color: white;
+  }
+  .tiptap h2 {
+    color: white;
+  }
+  .tiptap h3 {
+    color: white;
+  }
+  .tiptap h4 {
+    color: white;
+  }
+  .tiptap h5 {
+    color: white;
+  }
+  .tiptap h6 {
+    color: white;
+  }
+}

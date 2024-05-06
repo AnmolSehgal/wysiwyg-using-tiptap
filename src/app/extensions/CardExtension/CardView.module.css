@@ -1,0 +1,12 @@
+.cardViewWrapper {
+  padding: 20px;
+}
+
+.imageContainer {
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #695acda1;
+  border-radius: 4px;
+}
