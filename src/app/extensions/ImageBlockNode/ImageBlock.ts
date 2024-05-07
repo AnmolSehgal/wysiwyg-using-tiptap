@@ -1,6 +1,4 @@
-import { Node } from "@tiptap/core";
-import { ReactNodeViewRenderer, mergeAttributes } from "@tiptap/react";
-import CardView from "./CardView";
+import { Node, mergeAttributes } from "@tiptap/core";
 
 declare module "@tiptap/core" {
   interface Commands<ReturnType> {
@@ -8,7 +6,7 @@ declare module "@tiptap/core" {
       /**
        * create a card node
        */
-      createCardNode: () => ReturnType;
+      createImageNode: () => ReturnType;
     };
   }
 }
@@ -16,8 +14,10 @@ declare module "@tiptap/core" {
 const CardNode = Node.create({
   name: "cardNode",
   group: "block",
-  content: "block*",
+  content: "imageNode captionNode",
   gapCursor: false,
+  atom: true,
+  isolating: true,
   parseHTML() {
     return [
       {
@@ -26,19 +26,19 @@ const CardNode = Node.create({
     ];
   },
   renderHTML({ HTMLAttributes }) {
-    return ["cardNode", mergeAttributes(HTMLAttributes)];
+    return ["div", mergeAttributes(HTMLAttributes), 0];
   },
   addCommands() {
     return {
-      createCardNode:
+      createImageNode:
         () =>
         ({ commands }) => {
-          return commands.insertContent({ type: this.name });
+          return commands.insertContent({
+            type: this.name,
+            content: [{ type: "imageNode" }, { type: "captionNode" }],
+          });
         },
     };
-  },
-  addNodeView() {
-    return ReactNodeViewRenderer(CardView);
   },
 });
 

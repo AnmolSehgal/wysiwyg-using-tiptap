@@ -1,9 +1,11 @@
-import CardNode from "@/app/extensions/CardExtension/CardExtension";
+import CardNode from "@/app/extensions/ImageBlockNode/ImageBlock";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
 import Button from "../Button";
 import styles from "./tiptap.module.css";
+import ImageNode from "@/app/extensions/ImageNode/ImageNode";
+import CaptionNode from "@/app/extensions/CaptionNode/CaptionNode";
 
 // define your extension array
 const extensions = [
@@ -13,6 +15,8 @@ const extensions = [
     emptyEditorClass: styles.emptyEditorClass,
     placeholder: "Please add you content here",
   }),
+  ImageNode,
+  CaptionNode,
 ];
 
 const Tiptap = (): JSX.Element => {
@@ -59,7 +63,7 @@ const Tiptap = (): JSX.Element => {
               editor?.chain().focus().createCardNode().run();
             }}
           >
-            h4
+            ImageBlock
           </Button>
         </span>
       </div>
