@@ -6,7 +6,7 @@ const CaptionNode = Node.create({
   name: "captionNode",
   group: "block",
   content: "text*",
-  isolating: true,
+  code: true,
   parseHTML() {
     return [
       {

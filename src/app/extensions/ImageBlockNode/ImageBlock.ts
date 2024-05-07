@@ -12,16 +12,15 @@ declare module "@tiptap/core" {
 }
 
 const CardNode = Node.create({
-  name: "cardNode",
+  name: "imageBlockNode",
   group: "block",
   content: "imageNode captionNode",
   gapCursor: false,
   atom: true,
-  isolating: true,
   parseHTML() {
     return [
       {
-        tag: "cardNode",
+        tag: "imageBlockNode",
       },
     ];
   },

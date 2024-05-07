@@ -1,10 +1,12 @@
 import { NodeViewContent, NodeViewWrapper } from "@tiptap/react";
+import styles from "./CaptionNode.module.css";
 
 const CaptionNode = () => {
   return (
-    <NodeViewWrapper className={""}>
+    <NodeViewWrapper>
       <NodeViewContent
-        style={{ border: "1px solid rgba(255,255,255,0.88)" }}
+        as={"p"}
+        className={styles.captionNode}
       ></NodeViewContent>
     </NodeViewWrapper>
   );

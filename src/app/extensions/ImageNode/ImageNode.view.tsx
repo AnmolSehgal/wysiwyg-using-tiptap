@@ -2,6 +2,7 @@ import Button from "@/app/Components/Button";
 import { NodeViewProps, NodeViewWrapper } from "@tiptap/react";
 
 import styles from "./ImageNode.module.css";
+import Image from "next/image";
 
 const ImageNodeView = ({ node, updateAttributes }: NodeViewProps) => {
   console.log({ url: node.attrs.url });
@@ -23,8 +24,15 @@ const ImageNodeView = ({ node, updateAttributes }: NodeViewProps) => {
             </Button>
           </div>
         )}
-        {node.attrs.url && <img src={node.attrs.url} />}
-        {node.attrs.url && <div style={{ position: "absolute" }}></div>}
+        {node.attrs.url && (
+          <Image
+            src={node.attrs.url}
+            alt={""}
+            layout="fill"
+            style={{ objectFit: "contain" }}
+          />
+        )}
+        {/* {node.attrs.url && <div style={{ position: "absolute" }}></div>} */}
       </div>
     </NodeViewWrapper>
   );
