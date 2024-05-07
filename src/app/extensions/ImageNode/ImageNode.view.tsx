@@ -32,7 +32,16 @@ const ImageNodeView = ({ node, updateAttributes }: NodeViewProps) => {
             style={{ objectFit: "contain" }}
           />
         )}
-        {/* {node.attrs.url && <div style={{ position: "absolute" }}></div>} */}
+        {node.attrs.url && (
+          <div
+            onClick={() => {
+              updateAttributes({ url: null });
+            }}
+            style={{ position: "absolute", right: "0", bottom: "0" }}
+          >
+            delete
+          </div>
+        )}
       </div>
     </NodeViewWrapper>
   );

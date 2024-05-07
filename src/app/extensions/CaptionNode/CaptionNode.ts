@@ -5,8 +5,9 @@ import CaptionNodeView from "./CaptionNode.view";
 const CaptionNode = Node.create({
   name: "captionNode",
   group: "block",
-  content: "text*",
-  code: true,
+  content: "inline*",
+  isolating: true,
+
   parseHTML() {
     return [
       {
@@ -15,7 +16,7 @@ const CaptionNode = Node.create({
     ];
   },
   renderHTML({ HTMLAttributes }) {
-    return ["p", mergeAttributes(HTMLAttributes)];
+    return ["caption-node", mergeAttributes(HTMLAttributes), 0];
   },
   addNodeView() {
     return ReactNodeViewRenderer(CaptionNodeView);

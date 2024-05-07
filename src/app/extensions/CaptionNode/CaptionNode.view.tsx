@@ -4,10 +4,7 @@ import styles from "./CaptionNode.module.css";
 const CaptionNode = () => {
   return (
     <NodeViewWrapper>
-      <NodeViewContent
-        as={"p"}
-        className={styles.captionNode}
-      ></NodeViewContent>
+      <NodeViewContent className={styles.captionNode}></NodeViewContent>
     </NodeViewWrapper>
   );
 };
