@@ -5,8 +5,9 @@ import CaptionNodeView from "./CaptionNode.view";
 const CaptionNode = Node.create({
   name: "captionNode",
   group: "block",
-  content: "text*",
+  content: "inline*",
   isolating: true,
+
   parseHTML() {
     return [
       {
