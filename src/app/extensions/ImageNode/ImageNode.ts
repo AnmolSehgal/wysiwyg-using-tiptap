@@ -10,7 +10,7 @@ const ImageNode = Node.create({
   parseHTML() {
     return [
       {
-        tag: "cardNode",
+        tag: "imageNode",
       },
     ];
   },

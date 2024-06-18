@@ -1,5 +1,5 @@
 .tiptap {
-  background-color: rgba(59, 59, 59, 0.15);
+  background-color: rgba(245, 245, 245, 0.943);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   padding: 4px;
@@ -15,6 +15,11 @@
 .tiptap p {
   font-size: 1rem;
   line-height: 24px;
+}
+
+.tiptap :global(.tiptap) {
+  outline: none;
+  min-height: 64px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -39,5 +44,8 @@
   }
   .tiptap h6 {
     color: white;
+  }
+  .tiptap {
+    background-color: rgba(53, 53, 53, 0.943);
   }
 }

@@ -3,25 +3,22 @@ import { NodeViewProps, NodeViewWrapper } from "@tiptap/react";
 
 import styles from "./ImageNode.module.css";
 import Image from "next/image";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 
 const ImageNodeView = ({ node, updateAttributes }: NodeViewProps) => {
-  console.log({ url: node.attrs.url });
+  const handleUrlUpdate = () => {
+    const url = prompt("Please enter image url");
+    if (url) {
+      updateAttributes({ url });
+    }
+  };
   return (
-    <NodeViewWrapper>
+    <NodeViewWrapper className={styles.imageNodeWrapper}>
       <div className={styles.imageContainer}>
         {!node.attrs.url && (
           <div contentEditable={false}>
-            <Button
-              onClick={() => {
-                const url = prompt("Please enter image url");
-                if (url) {
-                  console.log(url);
-                  updateAttributes({ url });
-                }
-              }}
-            >
-              Set an image
-            </Button>
+            <Button onClick={handleUrlUpdate}>Set an image</Button>
           </div>
         )}
         {node.attrs.url && (
@@ -32,7 +29,11 @@ const ImageNodeView = ({ node, updateAttributes }: NodeViewProps) => {
             style={{ objectFit: "contain" }}
           />
         )}
-        {/* {node.attrs.url && <div style={{ position: "absolute" }}></div>} */}
+        {node.attrs.url && (
+          <div className={styles.refreshAction} onClick={handleUrlUpdate}>
+            <FontAwesomeIcon icon={faArrowsRotate} />
+          </div>
+        )}
       </div>
     </NodeViewWrapper>
   );

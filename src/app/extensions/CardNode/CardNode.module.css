@@ -1,0 +1,20 @@
+.cardViewWrapper {
+  padding: 20px;
+}
+
+.cardWrapper {
+  position: relative;
+}
+.deleteNode {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  right: 0;
+  background-color: #695acda1;
+  border-radius: 0 4px 0 3px;
+  padding: 4px;
+}
+.cardWrapper:hover > .deleteNode {
+  display: flex;
+}

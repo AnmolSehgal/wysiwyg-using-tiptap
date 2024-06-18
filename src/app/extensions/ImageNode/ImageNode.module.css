@@ -7,3 +7,25 @@
   border-radius: 4px;
   position: relative;
 }
+
+/* .icon {
+  color: 
+} */
+
+.refreshAction {
+  display: none;
+  position: absolute;
+  z-index: 20;
+  bottom: 0;
+  right: 0;
+  background-color: #695acda1;
+  border-radius: 4px 0 3px 0;
+  padding: 4px;
+}
+.imageNodeWrapper {
+  position: relative;
+}
+
+.imageNodeWrapper:hover .refreshAction {
+  display: flex;
+}

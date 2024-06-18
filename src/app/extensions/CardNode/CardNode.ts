@@ -1,4 +1,6 @@
 import { Node, mergeAttributes } from "@tiptap/core";
+import { ReactNodeViewRenderer } from "@tiptap/react";
+import CardNodeView from "./CardNode.view";
 
 declare module "@tiptap/core" {
   interface Commands<ReturnType> {
@@ -12,7 +14,7 @@ declare module "@tiptap/core" {
 }
 
 const CardNode = Node.create({
-  name: "imageBlockNode",
+  name: "cardNode",
   group: "block",
   content: "imageNode captionNode",
   gapCursor: false,
@@ -20,7 +22,7 @@ const CardNode = Node.create({
   parseHTML() {
     return [
       {
-        tag: "imageBlockNode",
+        tag: "cardNode",
       },
     ];
   },
@@ -38,6 +40,9 @@ const CardNode = Node.create({
           });
         },
     };
+  },
+  addNodeView() {
+    return ReactNodeViewRenderer(CardNodeView);
   },
 });
 

@@ -1,4 +1,4 @@
-import CardNode from "@/app/extensions/ImageBlockNode/ImageBlock";
+import CardNode from "@/app/extensions/CardNode/CardNode";
 import { EditorContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Placeholder from "@tiptap/extension-placeholder";
@@ -63,7 +63,7 @@ const Tiptap = (): JSX.Element => {
               editor?.chain().focus().createImageNode().run();
             }}
           >
-            ImageBlock
+            Card
           </Button>
         </span>
       </div>
