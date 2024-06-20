@@ -8,7 +8,7 @@ declare module "@tiptap/core" {
       /**
        * create a card node
        */
-      createImageNode: () => ReturnType;
+      createCardNode: () => ReturnType;
     };
   }
 }
@@ -17,8 +17,7 @@ const CardNode = Node.create({
   name: "cardNode",
   group: "block",
   content: "imageNode captionNode",
-  gapCursor: false,
-  atom: true,
+  isolating: true,
   parseHTML() {
     return [
       {
@@ -31,7 +30,7 @@ const CardNode = Node.create({
   },
   addCommands() {
     return {
-      createImageNode:
+      createCardNode:
         () =>
         ({ commands }) => {
           return commands.insertContent({

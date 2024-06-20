@@ -60,7 +60,7 @@ const Tiptap = (): JSX.Element => {
           </Button>
           <Button
             onClick={() => {
-              editor?.chain().focus().createImageNode().run();
+              editor?.chain().focus().createCardNode().run();
             }}
           >
             Card

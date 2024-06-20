@@ -8,7 +8,7 @@ import { faArrowsRotate } from "@fortawesome/free-solid-svg-icons";
 
 const ImageNodeView = ({ node, updateAttributes }: NodeViewProps) => {
   const handleUrlUpdate = () => {
-    const url = prompt("Please enter image url");
+    const url = prompt("Please enter image url", node.attrs.url || "");
     if (url) {
       updateAttributes({ url });
     }
@@ -31,7 +31,10 @@ const ImageNodeView = ({ node, updateAttributes }: NodeViewProps) => {
         )}
         {node.attrs.url && (
           <div className={styles.refreshAction} onClick={handleUrlUpdate}>
-            <FontAwesomeIcon icon={faArrowsRotate} />
+            <FontAwesomeIcon
+              icon={faArrowsRotate}
+              color="rgba(255, 255, 255, 0.65)"
+            />
           </div>
         )}
       </div>

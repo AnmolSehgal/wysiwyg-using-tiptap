@@ -6,7 +6,6 @@ const ImageNode = Node.create({
   name: "imageNode",
   group: "block",
   content: "inline*",
-  gapCursor: false,
   parseHTML() {
     return [
       {
